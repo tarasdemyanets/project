@@ -6,6 +6,6 @@ class Item < ApplicationRecord
     joins(:owner).where(users: { city_id: city })
   end
   scope :reviews_for_user, ->(user_id) do
-    joins(:reviews).where(owner:user_id).includes(:reviews)
+    joins(:reviews).where(owner: user_id).includes(:reviews)
   end
 end
