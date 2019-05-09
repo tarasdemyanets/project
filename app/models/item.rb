@@ -5,4 +5,8 @@ class Item < ApplicationRecord
   scope :from_city, ->(city) do
     joins(:owner).where(users: { city_id: city })
   end
+  scope :reviews_for_user, ->(user_id) do
+    joins(:reviews).where(owner:user_id).includes(:reviews)
+    #res.each_with_index { |item,index| res[index].reviews }
+  end
 end
