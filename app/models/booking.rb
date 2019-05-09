@@ -6,6 +6,6 @@ class Booking < ApplicationRecord
   end
 
   scope :validate_for_user, ->(renter_id, owner_id) do
-    Booking.joins(:user, item: :owner).where(user: renter_id, items: {owner: owner_id})
+    Booking.joins(:user, item: :owner).where(user: renter_id, items: { owner: owner_id })
   end
 end
