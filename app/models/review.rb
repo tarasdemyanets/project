@@ -1,11 +1,11 @@
 class ReviewValidator < ActiveModel::Validator
   def validate(record)
     if record.reviewable_type == 'Item'
-      result = Booking.joins(:user, item: :owner).where(user: record.reviewer, items: { id: item_id })
-      record.errors[:base] << 'You newer booked this item' if result.empty?
+      result = Booking.joins(:user, item: :owner).where(user: record.reviewer, items: { id: record.reviewable_id })
+      record.errors[:base] << 'You never booked this item' if result.empty?
     else
       result = Booking.joins(:item).where(user: record.reviewer, items: { owner: record.reviewable_id })
-      record.errors[:base] << 'You newer booked items of this user' if result.empty?
+      record.errors[:base] << 'You never booked items of this user' if result.empty?
     end
   end
 end
