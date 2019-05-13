@@ -1,12 +1,15 @@
 require 'rails_helper'
 RSpec.describe Item, type: :model do
+  before(:all) do
+    @city = create(:city)
+    @user1 = create(:user, city: @city)
+    @item = create(:item, owner: @user1)
+  end
   it 'retruns name of item' do
-    item = Item.new(name: 'Book')
-    expect(item.name).to eq('Book')
+    expect(@item.name).to eq('Keyboard')
   end
 
   it 'get reviews for user' do
-    result = Item.from_city(1)
-    expect(result).to eq(ActiveRec)
+    expect(Item.from_city(@city.id)).to eq([@item])
   end
 end
