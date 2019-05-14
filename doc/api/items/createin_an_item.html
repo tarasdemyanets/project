@@ -109,40 +109,24 @@ table th, table td {
       <h1>Items API</h1>
 
       <div class="article">
-        <h2>Valid request</h2>
-        <h3>GET /items/:id</h3>
+        <h2>Createin an item</h2>
+        <h3>POST /items</h3>
 
-          <h3>Parameters</h3>
-          <table class="parameters table table-striped table-bordered table-condensed">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="required">
-                    <span class="name">id</span>
-                </td>
-                <td>
-                  <span class="description">Item id</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
 
           <h3>Request</h3>
 
             <h4>Headers</h4>
             <pre class="request headers">Host: example.org
+Content-Type: application/x-www-form-urlencoded
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /items/7</pre>
+          <pre class="request route highlight">POST /items</pre>
 
 
+            <h4>Body</h4>
+            <pre class="request body">name=Notebook</pre>
 
 
             <h3>Response</h3>
@@ -154,23 +138,23 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;ce80d5d794b0da90cbb8b3d91ff66d81&quot;
+ETag: W/&quot;7eaa179895bd4609d40e7fe516951475&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 55224b5c-af6c-4783-8740-59a10a7f9bc0
-X-Runtime: 0.008396
-Content-Length: 118</pre>
+X-Request-Id: 00ee380c-a189-4069-854b-e9355423f626
+X-Runtime: 0.006510
+Content-Length: 119</pre>
             <h4>Status</h4>
-            <pre class="response status">200 OK</pre>
+            <pre class="response status">201 Created</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;id&quot;: 7,
-  &quot;name&quot;: &quot;Keyboard&quot;,
+  &quot;id&quot;: 10,
+  &quot;name&quot;: &quot;Notebook&quot;,
   &quot;owner&quot;: {
-    &quot;id&quot;: 3,
+    &quot;id&quot;: 6,
     &quot;first_name&quot;: &quot;Taras&quot;,
     &quot;last_name&quot;: &quot;Demianets&quot;,
     &quot;city&quot;: {
-      &quot;id&quot;: 3,
+      &quot;id&quot;: 6,
       &quot;name&quot;: &quot;Lviv&quot;
     }
   }

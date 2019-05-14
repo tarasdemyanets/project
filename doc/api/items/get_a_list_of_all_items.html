@@ -109,8 +109,8 @@ table th, table td {
       <h1>Items API</h1>
 
       <div class="article">
-        <h2>Valid request</h2>
-        <h3>GET /items/:id</h3>
+        <h2>Get a list of all items</h2>
+        <h3>GET /items</h3>
 
           <h3>Parameters</h3>
           <table class="parameters table table-striped table-bordered table-condensed">
@@ -122,11 +122,11 @@ table th, table td {
             </thead>
             <tbody>
               <tr>
-                <td class="required">
-                    <span class="name">id</span>
+                <td>
+                    <span class="name">page</span>
                 </td>
                 <td>
-                  <span class="description">Item id</span>
+                  <span class="description">Current page of items</span>
                 </td>
               </tr>
             </tbody>
@@ -140,7 +140,7 @@ table th, table td {
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /items/7</pre>
+          <pre class="request route highlight">GET /items</pre>
 
 
 
@@ -154,27 +154,29 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;ce80d5d794b0da90cbb8b3d91ff66d81&quot;
+ETag: W/&quot;ebf77990aeda351ee4ee89891ce6c9de&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 55224b5c-af6c-4783-8740-59a10a7f9bc0
-X-Runtime: 0.008396
-Content-Length: 118</pre>
+X-Request-Id: e32813ab-dbee-4b8d-82bd-39c45a37dbdf
+X-Runtime: 0.030266
+Content-Length: 120</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
-              <pre class="response body">{
-  &quot;id&quot;: 7,
-  &quot;name&quot;: &quot;Keyboard&quot;,
-  &quot;owner&quot;: {
-    &quot;id&quot;: 3,
-    &quot;first_name&quot;: &quot;Taras&quot;,
-    &quot;last_name&quot;: &quot;Demianets&quot;,
-    &quot;city&quot;: {
-      &quot;id&quot;: 3,
-      &quot;name&quot;: &quot;Lviv&quot;
+              <pre class="response body">[
+  {
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;Keyboard&quot;,
+    &quot;owner&quot;: {
+      &quot;id&quot;: 1,
+      &quot;first_name&quot;: &quot;Taras&quot;,
+      &quot;last_name&quot;: &quot;Demianets&quot;,
+      &quot;city&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;Lviv&quot;
+      }
     }
   }
-}</pre>
+]</pre>
       </div>
     </div>
   </body>

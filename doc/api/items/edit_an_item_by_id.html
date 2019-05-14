@@ -109,21 +109,43 @@ table th, table td {
       <h1>Items API</h1>
 
       <div class="article">
-        <h2>Listing items</h2>
-        <h3>GET /items</h3>
+        <h2>Edit an item by id</h2>
+        <h3>PUT /items/:id</h3>
 
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="required">
+                    <span class="name">id</span>
+                </td>
+                <td>
+                  <span class="description">Item id</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
           <h3>Request</h3>
 
             <h4>Headers</h4>
             <pre class="request headers">Host: example.org
+Content-Type: application/x-www-form-urlencoded
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /items</pre>
+          <pre class="request route highlight">PUT /items/9</pre>
 
 
+            <h4>Body</h4>
+            <pre class="request body">name=Edited+name</pre>
 
 
             <h3>Response</h3>
@@ -135,29 +157,27 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;ebf77990aeda351ee4ee89891ce6c9de&quot;
+ETag: W/&quot;7fc88dc367d26496220592dd5c21df6d&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: e920f537-6f40-4483-a728-5f0f8ace37ff
-X-Runtime: 0.036258
-Content-Length: 120</pre>
+X-Request-Id: 25b5f5fa-95db-4048-aed1-8d394730d891
+X-Runtime: 0.007202
+Content-Length: 142</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
-              <pre class="response body">[
-  {
-    &quot;id&quot;: 1,
-    &quot;name&quot;: &quot;Keyboard&quot;,
-    &quot;owner&quot;: {
-      &quot;id&quot;: 1,
-      &quot;first_name&quot;: &quot;Taras&quot;,
-      &quot;last_name&quot;: &quot;Demianets&quot;,
-      &quot;city&quot;: {
-        &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;Lviv&quot;
-      }
+              <pre class="response body">{
+  &quot;id&quot;: 9,
+  &quot;name&quot;: &quot;{\&quot;name\&quot;=&gt;\&quot;Edited name\&quot;}&quot;,
+  &quot;owner&quot;: {
+    &quot;id&quot;: 5,
+    &quot;first_name&quot;: &quot;Taras&quot;,
+    &quot;last_name&quot;: &quot;Demianets&quot;,
+    &quot;city&quot;: {
+      &quot;id&quot;: 5,
+      &quot;name&quot;: &quot;Lviv&quot;
     }
   }
-]</pre>
+}</pre>
       </div>
     </div>
   </body>

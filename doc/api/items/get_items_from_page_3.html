@@ -109,21 +109,41 @@ table th, table td {
       <h1>Items API</h1>
 
       <div class="article">
-        <h2>delete item</h2>
-        <h3>DELETE /items/:id</h3>
+        <h2>get items from page 3</h2>
+        <h3>GET /items</h3>
 
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">Current page of items</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
           <h3>Request</h3>
 
             <h4>Headers</h4>
             <pre class="request headers">Host: example.org
-Content-Type: application/x-www-form-urlencoded
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">DELETE /items/3</pre>
+          <pre class="request route highlight">GET /items?page=3</pre>
 
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">page: 3</pre>
 
 
 
@@ -136,27 +156,29 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;8d78f9e0e2430a153f41c8d70b961481&quot;
+ETag: W/&quot;f32eab6037f4794f77c9d63fe19be7e9&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 5b2b8fba-516d-4a29-82ca-52bd4b83c8f7
-X-Runtime: 0.009715
-Content-Length: 118</pre>
+X-Request-Id: a4989bd1-459a-426e-962c-1b2824033424
+X-Runtime: 0.008002
+Content-Length: 115</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
-              <pre class="response body">{
-  &quot;id&quot;: 3,
-  &quot;name&quot;: &quot;Keyboard&quot;,
-  &quot;owner&quot;: {
-    &quot;id&quot;: 3,
-    &quot;first_name&quot;: &quot;Taras&quot;,
-    &quot;last_name&quot;: &quot;Demianets&quot;,
-    &quot;city&quot;: {
-      &quot;id&quot;: 3,
-      &quot;name&quot;: &quot;Lviv&quot;
+              <pre class="response body">[
+  {
+    &quot;id&quot;: 6,
+    &quot;name&quot;: &quot;Car&quot;,
+    &quot;owner&quot;: {
+      &quot;id&quot;: 2,
+      &quot;first_name&quot;: &quot;Taras&quot;,
+      &quot;last_name&quot;: &quot;Demianets&quot;,
+      &quot;city&quot;: {
+        &quot;id&quot;: 2,
+        &quot;name&quot;: &quot;Lviv&quot;
+      }
     }
   }
-}</pre>
+]</pre>
       </div>
     </div>
   </body>
