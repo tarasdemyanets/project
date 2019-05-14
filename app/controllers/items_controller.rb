@@ -5,15 +5,18 @@ class ItemsController < ApplicationController
 
   def index
     @page = params[:page]
-    @pagy, @items = pagy(Item.all, items: 2, page: @page)
+    @pagy, @items = pagy(Item.all, items: 1, page: @page)
     render json: @items
   end
 
   def create
     @item = Item.new(params.permit(:name))
     @item.owner = User.find(6)
-    @item.save!
-    render json: @item
+    if @item.save
+      render json: @item, status: :created
+    else
+      render json: @item.errors, status: 400
+    end
   end
 
   def update
