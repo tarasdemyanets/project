@@ -1,0 +1,2 @@
+class ItemFilter < ApplicationRecord
+end
