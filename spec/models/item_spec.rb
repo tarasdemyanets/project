@@ -55,4 +55,18 @@ RSpec.describe Item, type: :model do
       expect(Item.filter_by_options(1)).to eq([])
     end
   end
+
+  describe 'Filter by price' do
+    it 'if price for rent less than user`s price' do
+      days = 2
+      price = 100
+      expect(Item.filter_by_price(days, price)).to eq([item1])
+    end
+
+    it 'if price for rent bigger than user`s price' do
+      days = 3
+      price = 50
+      expect(Item.filter_by_price(days, price)).to eq([])
+    end
+  end
 end

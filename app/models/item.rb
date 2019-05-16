@@ -19,4 +19,8 @@ class Item < ApplicationRecord
   scope :filter_by_options, ->(option_id) do
     joins(:filter_values).where(filter_values: { filter_id: option_id })
   end
+
+  scope :filter_by_price, ->(days, price) do
+    where("daily_price * #{days} <= #{price}")
+  end
 end
