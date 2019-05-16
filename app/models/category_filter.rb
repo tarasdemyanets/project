@@ -1,0 +1,2 @@
+class CategoryFilter < ApplicationRecord
+end
